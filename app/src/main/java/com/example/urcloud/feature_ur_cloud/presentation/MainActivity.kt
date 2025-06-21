@@ -1,4 +1,4 @@
-package com.example.urcloud
+package com.example.urcloud.feature_ur_cloud.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
