@@ -18,11 +18,18 @@ import com.example.urcloud.feature_ur_cloud.presentation.navigation.Screen
 import com.example.urcloud.feature_ur_cloud.presentation.screen.AccountScreen
 import com.example.urcloud.feature_ur_cloud.presentation.screen.MyCloudScreen
 import com.example.urcloud.feature_ur_cloud.presentation.screen.SharedScreen
+import com.example.urcloud.feature_ur_cloud.presentation.screen.SignInScreen
 import com.example.urcloud.ui.theme.UrCloudTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+//    private val googleAuthUiClient by lazy {
+//        GoogleAuthUiClient(
+//            context = applicationContext,
+//            oneTapClient = Identity.getSignInClient(applicationContext)
+//        )
+//    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -32,6 +39,11 @@ class MainActivity : ComponentActivity() {
                 NavHost(
                     navController = navController, startDestination = Screen.MyCloud.route
                 ){
+                    composable(Screen.SignIn.route){
+                        SignInScreen(onSignInClick = {
+                            navController.navigate(Screen.MyCloud.route)
+                        })
+                    }
                     composable(Screen.MyCloud.route){
                         MyCloudScreen(navController = navController)
                     }
@@ -39,7 +51,7 @@ class MainActivity : ComponentActivity() {
                         SharedScreen(navController = navController)
                     }
                     composable(Screen.Account.route){
-                        AccountScreen(navController = navController)
+                        AccountScreen(onSignOutClick = {},navController = navController)
                     }
 
                 }

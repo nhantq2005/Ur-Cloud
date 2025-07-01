@@ -28,6 +28,9 @@ workRuntimeKtx = "2.10.0"
 hilt = "2.51.1"
 media3CommonKtx = "1.6.1"
 composeMaterial = "1.4.1"
+playServicesAuth = "21.3.0"
+firebaseCommonKtx = "21.0.0"
+firebaseAuthKtx = "23.2.1"
 
 [libraries]
 accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanistSystemuicontroller" }
@@ -69,7 +72,10 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "converte
 dagger-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" } # Renamed
 dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 androidx-media3-common-ktx = { group = "androidx.media3", name = "media3-common-ktx", version.ref = "media3CommonKtx" }
-androidx-compose-material = { group = "androidx.wear.compose", name = "compose-material", version.ref = "composeMaterial" } # Renamed
+androidx-compose-material = { group = "androidx.wear.compose", name = "compose-material", version.ref = "composeMaterial" }
+play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
+firebase-common-ktx = { group = "com.google.firebase", name = "firebase-common-ktx", version.ref = "firebaseCommonKtx" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" } # Renamed
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
